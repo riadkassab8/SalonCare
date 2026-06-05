@@ -1,0 +1,156 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Cairo", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.005 280);
+  --foreground: oklch(0.22 0.04 280);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 280);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 280);
+  --primary: oklch(0.58 0.22 295);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-soft: oklch(0.95 0.04 295);
+  --secondary: oklch(0.96 0.01 280);
+  --secondary-foreground: oklch(0.3 0.04 280);
+  --muted: oklch(0.96 0.01 280);
+  --muted-foreground: oklch(0.5 0.02 280);
+  --accent: oklch(0.95 0.04 295);
+  --accent-foreground: oklch(0.35 0.15 295);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 280);
+  --input: oklch(0.92 0.01 280);
+  --ring: oklch(0.58 0.22 295);
+
+  --success: oklch(0.93 0.07 160);
+  --success-foreground: oklch(0.35 0.12 160);
+  --warning: oklch(0.93 0.09 75);
+  --warning-foreground: oklch(0.45 0.14 60);
+  --info: oklch(0.93 0.05 280);
+  --info-foreground: oklch(0.4 0.18 290);
+  --danger: oklch(0.94 0.05 25);
+  --danger-foreground: oklch(0.5 0.2 25);
+
+  --sidebar: oklch(0.22 0.04 270);
+  --sidebar-foreground: oklch(0.92 0.01 280);
+  --sidebar-accent: oklch(0.58 0.22 295);
+  --sidebar-accent-foreground: oklch(0.99 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    direction: rtl;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+/* SweetAlert2 themed for the Salon design system */
+.salon-swal-popup {
+  border-radius: 1.25rem !important;
+  padding: 1.75rem 1.5rem !important;
+  font-family: var(--font-sans) !important;
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+  box-shadow: 0 25px 50px -12px oklch(0.22 0.04 280 / 0.25) !important;
+  border: 1px solid var(--border) !important;
+}
+.salon-swal-title {
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  color: var(--foreground) !important;
+}
+.salon-swal-text {
+  font-size: 0.875rem !important;
+  color: var(--muted-foreground) !important;
+}
+.salon-swal-actions {
+  gap: 0.5rem !important;
+  margin-top: 1.25rem !important;
+}
+.salon-swal-confirm {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.625rem 1.25rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  transition: opacity 0.15s;
+}
+.salon-swal-confirm:hover { opacity: 0.9; }
+.salon-swal-cancel {
+  background: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.625rem 1.25rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  border: 1px solid var(--border) !important;
+}
+.salon-swal-toast {
+  border-radius: 1rem !important;
+  font-family: var(--font-sans) !important;
+  padding: 0.875rem 1rem !important;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 10px 30px -10px oklch(0.22 0.04 280 / 0.3) !important;
+}
+.salon-swal-toast .swal2-title {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  padding: 0 0.5rem !important;
+  color: var(--foreground) !important;
+}
+.swal2-container.swal2-top { padding-top: 1rem !important; }
