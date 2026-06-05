@@ -1,8 +1,5 @@
 {
-  "buildCommand": "bun install && bun run build",
-  "outputDirectory": ".output/public",
-  "devCommand": "bun run dev",
-  "installCommand": "bun install",
-  "framework": null,
-  "regions": ["iad1"]
+  "buildCommand": "bun run build",
+  "outputDirectory": ".vercel/output",
+  "installCommand": "bun install"
 }
